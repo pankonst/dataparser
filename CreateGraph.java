@@ -10,10 +10,10 @@ public class CreateGraph {
     public static void main (String[] args){
         Stopwatch timer = new Stopwatch().start();
         
-        //ImportToOracleNoSQL imp = new ImportToOracleNoSQL();
+        ImportToOracleNoSQL imp = new ImportToOracleNoSQL();
         
-        //imp.importVertices();
-        //imp.importEdges("/user/oracle/pgx/myout/part-m-00000");
+        imp.importVertices();
+        imp.importEdges("/user/oracle/pgx/myout/part-m-00000");
         
         Update update = new Update();
         update.updateOracleNoSQLGraph("/user/oracle/pgx/newTags.txt");
