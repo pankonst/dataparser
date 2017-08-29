@@ -90,6 +90,9 @@ public class ImportToOracleNoSQL {
                     v.setProperty("count",  count);
                     i++;
                 }
+                
+                dbConn.commit();
+                dbConn.close();
             } catch(SQLException e){
                 System.out.println(e.getMessage());
             }
@@ -214,8 +217,6 @@ public class ImportToOracleNoSQL {
         String line = br.readLine();
         
         while(line!=null){
-            count++;
-            
             lineParts = line.split("\\|");
             tags = lineParts[0].split("\\s");
             
@@ -232,7 +233,7 @@ public class ImportToOracleNoSQL {
                 continue;
             }
             
-            e = opg.addEdge((long)count, v1, v2, "connects");
+            e = opg.addEdge(lineParts[0], v1, v2, "connects");
             e.setProperty("weight", weight);
             
             line = br.readLine();
