@@ -10,8 +10,8 @@ public class CreateGraph {
     public static void main (String[] args){
         Stopwatch timer = new Stopwatch().start();
         
-        ImportToOracleNoSQL imp = new ImportToOracleNoSQL();
-        
+        // Comment out the next three lines when running the update lines commented below
+        ImportToOracleNoSQL imp = new ImportToOracleNoSQL();        
         imp.importVertices();
         imp.importEdges("/user/oracle/pgx/myout/part-m-00000");
         
