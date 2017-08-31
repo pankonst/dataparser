@@ -15,8 +15,9 @@ public class CreateGraph {
         imp.importVertices();
         imp.importEdges("/user/oracle/pgx/myout/part-m-00000");
         
-        Update update = new Update();
-        update.updateOracleNoSQLGraph("/user/oracle/pgx/newTags.txt");
+        // Uncomment only for the second part. The initial graph data MUST be created.
+        //Update update = new Update();
+        //update.updateOracleNoSQLGraph("/user/oracle/pgx/newTags.txt");
         
         timer.stop();
         
